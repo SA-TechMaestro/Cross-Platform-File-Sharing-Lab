@@ -34,7 +34,7 @@ This entry-level lab explores how to configure file sharing between a Linux (Ubu
 |------------------------------------------|------------------------------------------|
 | `report.md`                              | Detailed walkthrough and findings        |
 | `/images/`                               | Screenshots of configuration and results |
-| `SirajA_File-Sharing-Configuration-and-Troubleshooting_Lab.pdf` | Original submitted report (PDF) |
+| `File-Sharing-Configuration-and-Troubleshooting_Lab.pdf` | Original submitted report (PDF) |
 
 ---
 
