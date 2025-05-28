@@ -28,11 +28,23 @@ Configure and troubleshoot file sharing between a Linux (Ubuntu) virtual machine
 sudo apt update && sudo apt upgrade -y
 sudo apt install samba
 ```
+<details>
+<summary>📸 View: Installed Samba Version</summary>
+
+![Installed Samba version](./images/samba-version.png)
+
+</details>
 
 ### 2. Backup Samba Config
 ```
 sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.backup
 ```
+<details>
+<summary>📸 View: Samba Config Backup Created</summary>
+
+![Samba config backup created](./images/samba-config-backup.png)
+
+</details>
 
 ### 3. Prepare Windows VMs
 - Cloned or added a second Windows 10 VM
@@ -47,30 +59,52 @@ sudo mkdir -p /home/shared
 sudo chmod 777 /home/shared
 sudo nano /etc/samba/smb.conf
 ```
+<details>
+<summary>📸 View: Shared Folder and Directory Setup</summary>
 
-### Example Shared Folder Config:
-```
-[SharedFolder]
-   path = /home/shared
-   browseable = yes
-   read only = no
-   guest ok = yes
-```
+![Shared directory created and visible](./images/samba-shared-folder-and-directory.png)
+
+</details>
+
+<details>
+<summary>📸 View: Permissions Updated on Shared Directory</summary>
+
+![Permissions updated on shared directory](./images/updated-permissions.png)
+
+</details>
 
 ### 5. Restart Samba
 ```
 sudo systemctl restart smbd
 ```
+<details>
+<summary>📸 View: User Added and Samba Restarted</summary>
+
+![Samba restarted successfully](./images/added-user-restarted-samba.png)
+
+</details>
 
 ### 6. Configure Firewall
 ```
 sudo ufw allow samba
 ```
+<details>
+<summary>📸 View: Firewall Rule Added for Samba</summary>
+
+![UFW firewall rule added for Samba](./images/updated-firewall-samba-allowed.png)
+
+</details>
 
 ### 7. Connect from Windows VMs
 - Used Windows File Explorer > Run:  
 \\192.168.80.128\SharedFolder  
 - Successfully accessed the shared directory from both Windows 10 VMs
+<details>
+<summary>📸 View: Successful Connection from Windows 10</summary>
+
+![Shared folder accessed from Windows 10 VM](./images/win10-vm-succesful-connection.png)
+
+</details>
 
 ### 🔍 Observations
 - Both VMs were able to view and write to the shared folder  
